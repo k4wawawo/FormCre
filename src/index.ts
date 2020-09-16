@@ -1,6 +1,16 @@
-import './main.scss';
-import { App } from './app';
+const newDocumentBtn = document.getElementById('newDocument') as HTMLButtonElement;
+const documentsListBtn = document.getElementById('documentsList') as HTMLButtonElement;
 
-const hello = "yep, it's workin ;laskjf lsdkjf l;kdsjg l;kdsjgklg. still sick";
-document.body.innerHTML = hello;
-const app = new App();
+
+// Listen for a call to create a new Document
+newDocumentBtn.addEventListener('click', function (e) {
+  window.location.href = 'new-document.html';
+  e.preventDefault();
+});
+
+// Listen for a call to view the List of the Documents
+documentsListBtn.addEventListener('click', function (e) {
+  window.location.href = 'document-list.html';
+  e.preventDefault();
+});
+
