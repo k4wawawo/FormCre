@@ -1,31 +1,28 @@
 {
   "name": "webpack-starter",
   "version": "1.0.0",
-  "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx webpack-dev-server --content-base src",
+    "build": "npx webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/k4wawawo/FormCre.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/k4wawawo/FormCre/issues"
-  },
-  "homepage": "https://github.com/k4wawawo/FormCre#readme",
-  "dependencies": {
-    "@types/jest": "^26.0.13",
-    "jest": "^26.4.2",
-    "ts-jest": "^26.3.0",
-    "typescript": "^4.0.2"
-  },
   "devDependencies": {
-    "webpack": "^4.44.1",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "dependencies": {},
+  "keywords": [],
+  "description": ""
 }

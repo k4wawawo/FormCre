@@ -1,19 +1,23 @@
 import { App } from './app';
 import { Form } from './form';
 import { LocStorage } from './locStorage';
-import { DocumentList } from './documentList';
+import { DocumentList } from './document-List';
 
-const newFormForm = document.getElementById('document-form');
+const container = document.querySelector('.containter') as HTMLDivElement;
+const newFormForm = document.getElementById('document-form') as HTMLFormElement;
 const formName = document.getElementById('dLabel') as HTMLInputElement;
 
-const newFieldForm = document.getElementById('field-form');
+const newFieldForm = document.getElementById('field-form') as HTMLFormElement;
 const fieldName = document.getElementById('fLabel') as HTMLInputElement;
 
-const renderBtn = document.getElementById('renderBtn');
-const renderedForm = document.getElementById('renderedForm');
+const renderBtn = document.getElementById('renderBtn') as HTMLButtonElement ; 
+const saveBtn = document.getElementById('saveBtn') as HTMLButtonElement;
+const backBtn = document.getElementById('backBtn') as HTMLButtonElement;
+const renderedForm = document.getElementById('renderedForm') as HTMLButtonElement;
 
-const formValues = document.getElementById('formValues');
-const documentsList = document.getElementById('documentsList');
+const formValues = document.getElementById('fieldType') as HTMLSelectElement;
+
+
 
 const storage = new LocStorage();
 
@@ -48,6 +52,16 @@ renderBtn.addEventListener('click', function (e) {
   newFormForm.style.display = 'none';
   newFieldForm.style.display = 'none';
   renderBtn.style.display = 'none';
+  renderedForm.style.display = 'block';
+  e.preventDefault();
+});
+
+saveBtn.addEventListener('click', function (e) {
+  App.activeForm.render(renderedForm);
+  storage.saveDocument(App.activeForm);
+  newFormForm.style.display = 'none';
+  newFieldForm.style.display = 'none';
+  saveBtn.style.display = 'none';
   renderedForm.style.display = 'block';
   e.preventDefault();
 });
