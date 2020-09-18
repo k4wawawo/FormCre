@@ -26,7 +26,7 @@ export class DateField implements Field {
     return dateField;
   }
   getValue(): string {
-    const input = document.getElementById(`${this.name.toLowerCase()}`) as HTMLTextAreaElement;
+    const input = document.getElementById(`${this.name.toLowerCase()}`) as HTMLInputElement;
     return input.value;
   }
 }
